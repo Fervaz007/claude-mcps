@@ -1,0 +1,351 @@
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.681
+!MESSAGE [INFO] ====>  GET /sap/bc/adt/atc/customizing HTTP/1.1
+Session: DES_100_bvazquez_en_1 (275), stateless, foreground
+Request: foreground, finished
+Start Time: 2026-04-17 13:37:22.531
+Elapsed Time (microseconds): 148004 (128555 Server Time + 19449 Communication Time)
+
+--- REQUEST:
+GET /sap/bc/adt/atc/customizing HTTP/1.1
+sap-adt-request-id: 7250f8c9107b4e5db1f5e2e8e030440f
+Accept: application/xml, application/vnd.sap.atc.customizing-v1+xml, application/vnd.sap.atc.customizing-v2+xml
+User-Agent: Eclipse/4.37.0.v20250905-0730 (win32; x86_64; Java 21.0.8) ADT/3.54.0 (devedition)
+X-sap-adt-profiling: server-time
+
+--- RESPONSE:
+HTTP/1.1 200 OK
+~server_protocol: HTTP/1.1
+X-sap-adt-profiling: server-time=128555
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="utf-8"?><atc:customizing xmlns:atc="http://www.sap.com/adt/atc"><properties><property name="ciCheckFlavour" value="true"/><property name="systemCheckVariant" value="DEFAULT"/><property name="isCCSTunnelEnabled" value="false"/></properties><exemption><reasons><reason id="FPOS" justificationMandatory="true" title="False Positive - finding does not apply - see justification"/><reason id="OTHR" justificationMandatory="true" title="Other Reason - see justification"/></reasons></exemption></atc:customizing>
+
+--- REQUEST STACK TRACE (thread: main)com.sap.adt.communication.internal.StackTrace
+	at com.sap.adt.communication.internal.notification.SessionNotificationUtil.notifyCycleFinished(SessionNotificationUtil.java:78)
+	at com.sap.adt.communication.http.internal.dispatcher.AbstractRequestDispatcher.notifyCycleFinished(AbstractRequestDispatcher.java:100)
+	at com.sap.adt.communication.internal.jco.dispatcher.JCoRequestDispatcher.dispatch(JCoRequestDispatcher.java:111)
+	at com.sap.adt.communication.internal.session.SystemSession.dispatchRequest(SystemSession.java:134)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:129)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:89)
+	at com.sap.adt.communication.internal.resources.RestResource.invoke(RestResource.java:69)
+	at com.sap.adt.communication.internal.resources.AbstractRestResource.get(AbstractRestResource.java:46)
+	at com.sap.adt.atc.core.customizing.AtcSystemSpecificsProvider.retrieveSystemSpecificsFromBackend(AtcSystemSpecificsProvider.java:73)
+	at com.sap.adt.atc.core.customizing.AtcSystemSpecificsProvider.getSystemSpecifics(AtcSystemSpecificsProvider.java:49)
+	at com.sap.adt.atc.ui.internal.setting.AtcSystemSpecificsAccess.getSystemSpecificsAsynchronous(AtcSystemSpecificsAccess.java:66)
+	at com.sap.adt.atc.ui.internal.AtcCustomizingLoader.fetchCustomizingAsynchronously(AtcCustomizingLoader.java:16)
+	at com.sap.adt.tm.ui.internal.jobs.TMExecuteActionJob$1.run(TMExecuteActionJob.java:168)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:166)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4135)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3751)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+
+--- DESTINATION PROPERTIES
+adt.jco.client.destination: DES_100_bvazquez_en_1
+adt.r3name: DES
+jco.client.client: 100
+jco.client.lang: EN
+adt.jco.client.authenticationKind: password
+jco.client.user: BVAZQUEZ
+
+<====
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.788
+!MESSAGE [INFO] ====>  POST /sap/bc/adt/atc/worklists?checkVariant=DEFAULT HTTP/1.1
+Session: DES_100_bvazquez_en_1 (276), stateless, foreground
+Request: foreground, finished
+Start Time: 2026-04-17 13:37:22.712
+Elapsed Time (microseconds): 74753 (56979 Server Time + 17774 Communication Time)
+
+--- REQUEST:
+POST /sap/bc/adt/atc/worklists?checkVariant=DEFAULT HTTP/1.1
+sap-adt-request-id: d8300ddb8d4043f2a7cef7fa1418434e
+Accept: text/plain
+User-Agent: Eclipse/4.37.0.v20250905-0730 (win32; x86_64; Java 21.0.8) ADT/3.54.0 (devedition)
+X-sap-adt-profiling: server-time
+
+--- RESPONSE:
+HTTP/1.1 200 OK
+~server_protocol: HTTP/1.1
+X-sap-adt-profiling: server-time=56979
+Location: /atc/worklists/worklistId/005056876F3F1FD18ED082E91AE9C000
+Content-Type: text/plain; charset=utf-8
+
+005056876F3F1FD18ED082E91AE9C000
+
+--- REQUEST STACK TRACE (thread: main)com.sap.adt.communication.internal.StackTrace
+	at com.sap.adt.communication.internal.notification.SessionNotificationUtil.notifyCycleFinished(SessionNotificationUtil.java:78)
+	at com.sap.adt.communication.http.internal.dispatcher.AbstractRequestDispatcher.notifyCycleFinished(AbstractRequestDispatcher.java:100)
+	at com.sap.adt.communication.internal.jco.dispatcher.JCoRequestDispatcher.dispatch(JCoRequestDispatcher.java:111)
+	at com.sap.adt.communication.internal.session.SystemSession.dispatchRequest(SystemSession.java:134)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:129)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:89)
+	at com.sap.adt.communication.internal.resources.RestResource.invoke(RestResource.java:69)
+	at com.sap.adt.communication.internal.resources.AbstractRestResource.post(AbstractRestResource.java:71)
+	at com.sap.adt.atc.internal.worklist.AtcWorklistBackendAccess.createWorklist(AtcWorklistBackendAccess.java:73)
+	at com.sap.adt.atc.ui.AtcWorklistProvider.getOrCreateWorklistId(AtcWorklistProvider.java:45)
+	at com.sap.adt.atc.ui.AtcWorklistProvider.getOrCreateWorklistId(AtcWorklistProvider.java:31)
+	at com.sap.adt.tm.ui.internal.jobs.TMExecuteActionJob$1.run(TMExecuteActionJob.java:178)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:166)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4135)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3751)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+
+--- DESTINATION PROPERTIES
+adt.jco.client.destination: DES_100_bvazquez_en_1
+adt.r3name: DES
+jco.client.client: 100
+jco.client.lang: EN
+adt.jco.client.authenticationKind: password
+jco.client.user: BVAZQUEZ
+
+<====
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.821
+!MESSAGE [INFO] ====>  POST /sap/bc/adt/cts/transportrequests/DESK936735/releasejobs?worklistId=005056876F3F1FD18ED082E91AE9C000 HTTP/1.1
+Session: DES_100_bvazquez_en_1 (277), stateless, foreground
+Request: foreground, finished
+Start Time: 2026-04-17 13:37:22.799
+Elapsed Time (microseconds): 21235 (3778 Server Time + 17457 Communication Time)
+
+--- REQUEST:
+POST /sap/bc/adt/cts/transportrequests/DESK936735/releasejobs?worklistId=005056876F3F1FD18ED082E91AE9C000 HTTP/1.1
+sap-adt-request-id: 024fcb672fd04186860a248361f525a2
+Accept: application/vnd.sap.adt.transportorganizer.v1+xml
+User-Agent: Eclipse/4.37.0.v20250905-0730 (win32; x86_64; Java 21.0.8) ADT/3.54.0 (devedition)
+X-sap-adt-profiling: server-time
+
+--- RESPONSE:
+HTTP/1.1 200 OK
+~server_protocol: HTTP/1.1
+X-sap-adt-profiling: server-time=3778
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="utf-8"?><tm:root tm:useraction="releasejobs" tm:number="DESK936735" tm:uri="/sap/bc/adt/vit/tm/releasejobs/DESK936735?tmNavigationId=20260417193722" xmlns:tm="http://www.sap.com/cts/adt/tm"/>
+
+--- REQUEST STACK TRACE (thread: Worker-185: DESK936735 Transport request or task release)com.sap.adt.communication.internal.StackTrace
+	at com.sap.adt.communication.internal.notification.SessionNotificationUtil.notifyCycleFinished(SessionNotificationUtil.java:78)
+	at com.sap.adt.communication.http.internal.dispatcher.AbstractRequestDispatcher.notifyCycleFinished(AbstractRequestDispatcher.java:100)
+	at com.sap.adt.communication.internal.jco.dispatcher.JCoRequestDispatcher.dispatch(JCoRequestDispatcher.java:111)
+	at com.sap.adt.communication.internal.session.SystemSession.dispatchRequest(SystemSession.java:134)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:129)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:89)
+	at com.sap.adt.communication.internal.resources.RestResource.invoke(RestResource.java:69)
+	at com.sap.adt.communication.internal.resources.AbstractRestResource.post(AbstractRestResource.java:71)
+	at com.sap.adt.tm.backend.internal.TransportReleaseService.release(TransportReleaseService.java:72)
+	at com.sap.adt.tm.backend.internal.TransportReleaseService.releaseTransport(TransportReleaseService.java:38)
+	at com.sap.adt.tm.ui.internal.jobs.TMExecuteActionJob.releaseRequestAndFetchResult(TMExecuteActionJob.java:402)
+	at com.sap.adt.tm.ui.internal.jobs.TMExecuteActionJob$1$1.run(TMExecuteActionJob.java:204)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+--- DESTINATION PROPERTIES
+adt.jco.client.destination: DES_100_bvazquez_en_1
+adt.r3name: DES
+jco.client.client: 100
+jco.client.lang: EN
+adt.jco.client.authenticationKind: password
+jco.client.user: BVAZQUEZ
+
+<====
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.854
+!MESSAGE [INFO] Begin of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_confirm_location/zcl_confirm_location.apclass [type: FILE]
+!STACK 0
+com.sap.adt.logging.internal.StackTrace: Begin of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_confirm_location/zcl_confirm_location.apclass [type: FILE]
+	at com.sap.adt.util.TraceUtil.traceBeginOfWorkspaceRunnable(TraceUtil.java:76)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObjectPessimistic(AbapClassDataObjectLoader.java:134)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObject(AbapClassDataObjectLoader.java:77)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:24)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:18)
+	at com.sap.adt.debugger.internal.breakpoints.AbapDebuggerUtility.isUnderlyingFileActive(AbapDebuggerUtility.java:53)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.toBreakpointRequestData(AbapDebuggerServices.java:328)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.synchronizeBreakpointsFull(AbapDebuggerServices.java:1450)
+	at com.sap.adt.debugger.ui.internal.breakpoints.RequestListenerForBreakpointSynchronization$BreakpointSynchronizationJob.run(RequestListenerForBreakpointSynchronization.java:148)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.861
+!MESSAGE [INFO] End of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_confirm_location/zcl_confirm_location.apclass [type: FILE]
+!STACK 0
+com.sap.adt.logging.internal.StackTrace: End of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_confirm_location/zcl_confirm_location.apclass [type: FILE]
+	at com.sap.adt.util.TraceUtil.traceEndOfWorkspaceRunnable(TraceUtil.java:95)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObjectPessimistic(AbapClassDataObjectLoader.java:195)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObject(AbapClassDataObjectLoader.java:77)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:24)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:18)
+	at com.sap.adt.debugger.internal.breakpoints.AbapDebuggerUtility.isUnderlyingFileActive(AbapDebuggerUtility.java:53)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.toBreakpointRequestData(AbapDebuggerServices.java:328)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.synchronizeBreakpointsFull(AbapDebuggerServices.java:1450)
+	at com.sap.adt.debugger.ui.internal.breakpoints.RequestListenerForBreakpointSynchronization$BreakpointSynchronizationJob.run(RequestListenerForBreakpointSynchronization.java:148)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.867
+!MESSAGE [INFO] Begin of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_direct_distribution/zcl_direct_distribution.apclass [type: FILE]
+!STACK 0
+com.sap.adt.logging.internal.StackTrace: Begin of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_direct_distribution/zcl_direct_distribution.apclass [type: FILE]
+	at com.sap.adt.util.TraceUtil.traceBeginOfWorkspaceRunnable(TraceUtil.java:76)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObjectPessimistic(AbapClassDataObjectLoader.java:134)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObject(AbapClassDataObjectLoader.java:77)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:24)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:18)
+	at com.sap.adt.debugger.internal.breakpoints.AbapDebuggerUtility.isUnderlyingFileActive(AbapDebuggerUtility.java:53)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.toBreakpointRequestData(AbapDebuggerServices.java:328)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.synchronizeBreakpointsFull(AbapDebuggerServices.java:1450)
+	at com.sap.adt.debugger.ui.internal.breakpoints.RequestListenerForBreakpointSynchronization$BreakpointSynchronizationJob.run(RequestListenerForBreakpointSynchronization.java:148)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.872
+!MESSAGE [INFO] ====>  GET /sap/bc/adt/security/reentranceticket HTTP/1.1
+Session: DES_100_bvazquez_en_1 (278), stateless, foreground
+Request: foreground, finished
+Start Time: 2026-04-17 13:37:22.851
+Elapsed Time (microseconds): 20263 (3028 Server Time + 17235 Communication Time)
+
+--- REQUEST:
+GET /sap/bc/adt/security/reentranceticket HTTP/1.1
+sap-adt-request-id: e03f855fc0a5421fb4b8942ecebd9efc
+Accept: text/plain
+User-Agent: Eclipse/4.37.0.v20250905-0730 (win32; x86_64; Java 21.0.8) ADT/3.54.0 (devedition)
+X-sap-adt-profiling: server-time
+
+--- RESPONSE:
+HTTP/1.1 200 OK
+~server_protocol: HTTP/1.1
+X-sap-adt-profiling: server-time=3028
+Content-Type: text/plain; charset=utf-8
+
+AjQxMDMBABhCAFYAQQBaAFEAVQBFAFoAIAAgACAAIAACAAYxADAAMAADABBEAEUAUwAgACAAIAAgACAABAAYMgAwADIANgAwADQAMQA3ADEAOQAzADcABwAEAAAAAggAAQEJAAJFAA8AAzEwMBAACERFUyAgICAg/wFWMIIBUgYJKoZIhvcNAQcCoIIBQzCCAT8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGCAR4wggEaAgEBMHAwZDELMAkGA1UEBhMCREUxHDAaBgNVBAoTE1NBUCBUcnVzdCBDb21tdW5pdHkxEzARBgNVBAsTClNBUCBXZWIgQVMxFDASBgNVBAsTC0kwMDIwMTA2NjM2MQwwCgYDVQQDEwNERVMCCAogFQUmACQBMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yNjA0MTcxOTM3MjJaMCMGCSqGSIb3DQEJBDEWBBRcYp/XG2Q4wMJwBY7b03s6YXT0EjAJBgcqhkjOOAQDBC4wLAIUMw1gVnmC4I6NstV!5Y2M47ynElECFCovSC2Z4nQw0onV9tyrakJbxvlz
+
+--- REQUEST STACK TRACE (thread: Worker-187: Opening SAP Gui ...)com.sap.adt.communication.internal.StackTrace
+	at com.sap.adt.communication.internal.notification.SessionNotificationUtil.notifyCycleFinished(SessionNotificationUtil.java:78)
+	at com.sap.adt.communication.http.internal.dispatcher.AbstractRequestDispatcher.notifyCycleFinished(AbstractRequestDispatcher.java:100)
+	at com.sap.adt.communication.internal.jco.dispatcher.JCoRequestDispatcher.dispatch(JCoRequestDispatcher.java:111)
+	at com.sap.adt.communication.internal.session.SystemSession.dispatchRequest(SystemSession.java:134)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:129)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:89)
+	at com.sap.adt.communication.internal.resources.RestResource.invoke(RestResource.java:69)
+	at com.sap.adt.communication.internal.resources.AbstractRestResource.get(AbstractRestResource.java:46)
+	at com.sap.adt.project.internal.reentranceticket.ReentranceTicketService.createReentranceTicket(ReentranceTicketService.java:46)
+	at com.sap.adt.project.internal.reentranceticket.ReentranceTicketService.createReentranceTicket(ReentranceTicketService.java:24)
+	at com.sap.adt.sapgui.ui.internal.ticket.ReentranceTicketService.createReentranceTicket(ReentranceTicketService.java:19)
+	at com.sap.adt.sapgui.ui.internal.views.AbstractSapGuiWorkbenchPart.getReentranceTicket(AbstractSapGuiWorkbenchPart.java:341)
+	at com.sap.adt.sapgui.ui.internal.views.AbstractSapGuiWorkbenchPart$2.run(AbstractSapGuiWorkbenchPart.java:284)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+--- DESTINATION PROPERTIES
+adt.jco.client.destination: DES_100_bvazquez_en_1
+adt.r3name: DES
+jco.client.client: 100
+jco.client.lang: EN
+adt.jco.client.authenticationKind: password
+jco.client.user: BVAZQUEZ
+
+<====
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.877
+!MESSAGE [INFO] End of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_direct_distribution/zcl_direct_distribution.apclass [type: FILE]
+!STACK 0
+com.sap.adt.logging.internal.StackTrace: End of workspace-runnable: [flags: AVOID_UPDATE, rule: F/DES_100_bvazquez_en_1/.adt/classlib] for operation REFRESH AND READ PROPERTY FILE on resource semanticfs:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_direct_distribution/zcl_direct_distribution.apclass [type: FILE]
+	at com.sap.adt.util.TraceUtil.traceEndOfWorkspaceRunnable(TraceUtil.java:95)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObjectPessimistic(AbapClassDataObjectLoader.java:195)
+	at com.sap.adt.oo.internal.classes.AbapClassDataObjectLoader.getAdtCompoundObject(AbapClassDataObjectLoader.java:77)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:24)
+	at com.sap.adt.tools.abapsource.AbstractAdtObjectLoader.getAdtObject(AbstractAdtObjectLoader.java:18)
+	at com.sap.adt.debugger.internal.breakpoints.AbapDebuggerUtility.isUnderlyingFileActive(AbapDebuggerUtility.java:53)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.toBreakpointRequestData(AbapDebuggerServices.java:328)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.synchronizeBreakpointsFull(AbapDebuggerServices.java:1450)
+	at com.sap.adt.debugger.ui.internal.breakpoints.RequestListenerForBreakpointSynchronization$BreakpointSynchronizationJob.run(RequestListenerForBreakpointSynchronization.java:148)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.sap.adt.logging 1 0 2026-04-17 13:37:22.954
+!MESSAGE [INFO] ====>  POST /sap/bc/adt/debugger/breakpoints HTTP/1.1
+Session: DES_100_bvazquez_en_1 (279), stateless, background
+Request: background, finished
+Start Time: 2026-04-17 13:37:22.881
+Elapsed Time (microseconds): 72493 (50542 Server Time + 21951 Communication Time)
+
+--- REQUEST:
+POST /sap/bc/adt/debugger/breakpoints HTTP/1.1
+sap-adt-request-id: 7e25887558734ff39cb01622e7fee812
+Content-Type: application/xml
+Accept: application/xml
+User-Agent: Eclipse/4.37.0.v20250905-0730 (win32; x86_64; Java 21.0.8) ADT/3.54.0 (devedition)
+X-sap-adt-profiling: server-time
+
+<?xml version="1.0" encoding="UTF-8"?><dbg:breakpoints scope="external" debuggingMode="user" requestUser="BVAZQUEZ" terminalId="FB059D5B0AC91EDEBE8C0770DF319452" ideId="E3760F6B68155AE338FCC342E9B62236" systemDebugging="false" deactivated="false" xmlns:dbg="http://www.sap.com/adt/debugger"><syncScope mode="full"></syncScope><breakpoint kind="line" id="KIND=0.SOURCETYPE=ABAP.MAIN_PROGRAM=ZCL_CONFIRM_LOCATION==========CP.INCLUDE=ZCL_CONFIRM_LOCATION==========CM001.LINE_NR=57" clientId="53494:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_confirm_location/zcl_confirm_location.aclass" skipCount="0" adtcore:uri="/sap/bc/adt/oo/classes/zcl_confirm_location/source/main#start=73" xmlns:adtcore="http://www.sap.com/adt/core"></breakpoint><breakpoint kind="line" id="KIND=0.SOURCETYPE=ABAP.MAIN_PROGRAM=ZCL_DIRECT_DISTRIBUTION=======CP.INCLUDE=ZCL_DIRECT_DISTRIBUTION=======CM00A.LINE_NR=57" clientId="51194:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_direct_distribution/zcl_direct_distribution.aclass" skipCount="0" adtcore:uri="/sap/bc/adt/oo/classes/zcl_direct_distribution/source/main#start=922" xmlns:adtcore="http://www.sap.com/adt/core"></breakpoint></dbg:breakpoints>
+
+--- RESPONSE:
+HTTP/1.1 200 OK
+~server_protocol: HTTP/1.1
+X-sap-adt-profiling: server-time=50542
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="utf-8"?><dbg:breakpoints xmlns:dbg="http://www.sap.com/adt/debugger"><breakpoint kind="line" clientId="53494:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_confirm_location/zcl_confirm_location.aclass" id="KIND=0.SOURCETYPE=ABAP.MAIN_PROGRAM=ZCL_CONFIRM_LOCATION==========CP.INCLUDE=ZCL_CONFIRM_LOCATION==========CM001.LINE_NR=57" nonAbapFlavour="" adtcore:uri="/sap/bc/adt/oo/classes/zcl_confirm_location/source/main#start=73" adtcore:type="CLAS/OC" adtcore:name="ZCL_CONFIRM_LOCATION" adtcore:packageName="ZBDS1" xmlns:adtcore="http://www.sap.com/adt/core"/><breakpoint kind="line" clientId="51194:/DES_100_bvazquez_en_1/.adt/classlib/classes/zcl_direct_distribution/zcl_direct_distribution.aclass" id="KIND=0.SOURCETYPE=ABAP.MAIN_PROGRAM=ZCL_DIRECT_DISTRIBUTION=======CP.INCLUDE=ZCL_DIRECT_DISTRIBUTION=======CM00A.LINE_NR=57" nonAbapFlavour="" adtcore:uri="/sap/bc/adt/oo/classes/zcl_direct_distribution/source/main#start=922" adtcore:type="CLAS/OC" adtcore:name="ZCL_DIRECT_DISTRIBUTION" adtcore:packageName="ZBDS1" xmlns:adtcore="http://www.sap.com/adt/core"/></dbg:breakpoints>
+
+--- REQUEST STACK TRACE (thread: Worker-190: Synchronizing breakpoints...)com.sap.adt.communication.internal.StackTrace
+	at com.sap.adt.communication.internal.notification.SessionNotificationUtil.notifyCycleFinished(SessionNotificationUtil.java:78)
+	at com.sap.adt.communication.http.internal.dispatcher.AbstractRequestDispatcher.notifyCycleFinished(AbstractRequestDispatcher.java:100)
+	at com.sap.adt.communication.internal.jco.dispatcher.JCoRequestDispatcher.dispatch(JCoRequestDispatcher.java:111)
+	at com.sap.adt.communication.internal.session.SystemSession.dispatchRequest(SystemSession.java:134)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:129)
+	at com.sap.adt.communication.internal.session.SystemSession.sendRequest(SystemSession.java:89)
+	at com.sap.adt.communication.internal.resources.RestResource.invoke(RestResource.java:69)
+	at com.sap.adt.communication.internal.resources.AbstractRestResource.post(AbstractRestResource.java:61)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices$2.call(AbapDebuggerServices.java:1133)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices$2.call(AbapDebuggerServices.java:1)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.submitWithLock(AbapDebuggerServices.java:1209)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.doSynchronizeBreakpoints(AbapDebuggerServices.java:1118)
+	at com.sap.adt.debugger.internal.AbapDebuggerServices.synchronizeBreakpointsFull(AbapDebuggerServices.java:1454)
+	at com.sap.adt.debugger.ui.internal.breakpoints.RequestListenerForBreakpointSynchronization$BreakpointSynchronizationJob.run(RequestListenerForBreakpointSynchronization.java:148)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+--- DESTINATION PROPERTIES
+adt.jco.client.destination: DES_100_bvazquez_en_1
+adt.r3name: DES
+jco.client.client: 100
+jco.client.lang: EN
+adt.jco.client.authenticationKind: password
+jco.client.user: BVAZQUEZ
+
+<====

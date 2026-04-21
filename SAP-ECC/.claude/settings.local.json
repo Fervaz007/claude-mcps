@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sap-mcp__leer_programa",
+      "mcp__sap-mcp__modificar_programa_transporte",
+      "Bash(claude mcp *)",
+      "mcp__sap-mcp__liberar_orden"
+    ]
+  }
+}
